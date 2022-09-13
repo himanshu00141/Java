@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Education Details</title>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link rel="stylesheet"
+	href=""
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<Body background="https://1.bp.blogspot.com/-sTxAHAxirGM/WVbAe2098nI/AAAAAAABENs/_I5sYMYgLOUzaIE7FfF4qdGX-hoAkq9SgCLcBGAs/s1600/Blog_20170624_113552.jpg">   
+
+    <nav>
+        <div class="nav-wrapper" style="background-color: #64b5f6;">
+          <a href="#" class="brand-logo right">Employee Onboarding</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="Employee.html">Home</a></li>
+            <li><a href="education.html">Education Details</a></li>
+            <li><a href="PersonalDetails.html">Personal Details</a></li>
+            <li><a href="Address.html">Address Details</a></li>
+          </ul>
+        </div>
+      </nav>
+            
+<br>
+<br>
+	<div class = "container" style="width:100%" margin:0,auto>
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card" style = "margin: 100px" >
+				<h1 class = "text-center"> Add Educational Details</h1>
+				<div class = "card-body">
+					<form th:action="@{/employee}" th:object = "${employee}" method="POST">
+						<div class ="form-group">
+							<label> Your Qualification </label>
+							<input
+							type = "text"
+							name = "qualification"
+							th:field = "*{qualification}"
+							class = "form-control"
+							placeholder="Qualification" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Education Type </label>
+							<input
+							type = "text"
+							name = "eduType"
+							th:field = "*{eduType}"
+							class = "form-control"
+							placeholder="Education Type" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Your qualifying degree</label>
+							<input
+							type = "text"
+							name = "degree"
+							th:field = "*{degree}"
+							class = "form-control"
+							placeholder="Qualifying Degree" 
+							/>
+						</div>
+						
+                        <div class ="form-group">
+							<label>Aggregate % in qualifying degree</label>
+							<input
+							type = "number"
+							name = "marks"
+							th:field = "*{marks}"
+							class = "form-control"
+							placeholder="Percentage" 
+							/>
+						</div>
+                        <div class ="form-group">
+							<label>University Name</label>
+							<input
+							type = "text"
+							name = "uniName"
+							th:field = "*{uniName}"
+							class = "form-control"
+							placeholder="University Name" 
+							/>
+						</div>
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

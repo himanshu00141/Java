@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Onboarding</title>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<Body background="https://1.bp.blogspot.com/-sTxAHAxirGM/WVbAe2098nI/AAAAAAABENs/_I5sYMYgLOUzaIE7FfF4qdGX-hoAkq9SgCLcBGAs/s1600/Blog_20170624_113552.jpg">   
+
+    <nav>
+        <div class="nav-wrapper" style="background-color: #64b5f6;">
+          <a href="#" class="brand-logo right">Employee Onboarding</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="Employee.html">Home</a></li>
+            <li><a href="Education.html">Educational Details</a></li>
+            <li><a href="PersonalDetails.html">Personal Details</a></li>
+            <li><a href="Address.html">Address Details</a></li>
+          </ul>
+        </div>
+      </nav>
+            
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/students}"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/students}"></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+		<table class = "table table-striped table-bordered">
+			<thead class = "table-dark">
+				<tr>
+					<th> EmployeeFirst Name</th>
+					<th> Employee Last Name</th>
+					<th> Employee Email </th>
+                    <th> Employee Contact Number</th>
+                    <th> Employee Address Details</th>
+                    <th> Employee Education Details</th>
+                    
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each = "student: ${students}">
+					<td th:text = "${employee.firstName}"></td>
+					<td th:text = "${employee.lastName}"></td>
+					<td th:text = "${employee.number}"></td>
+				    <td th:text = "${employee.Address}"></td>
+				    <td th:text = "${employee.eduType}"></td>
+					<!-- <td>
+						<a th:href = "@{/employee/edit/{id}(id=${student.id})}"
+						 class = "btn btn-primary">Update</a>
+						
+						<a th:href = "@{/students/{id}(id=${student.id})}"
+						 class = "btn btn-danger">Delete</a>
+						 
+					</td> -->
+				</tr>
+			</tbody>
+		
+		</table>
+		
+	</div>
+</body>
+</html>
